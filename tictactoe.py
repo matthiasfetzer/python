@@ -6,6 +6,7 @@
 fields = []
 winner = False
 player1Plays = True
+counterEOG=0
 
 
 # creating a function to print the board
@@ -34,6 +35,7 @@ for field in range (0 , 9) :
 
 # start game
 while (not winner):
+
     print_board_game()
     if (player1Plays) : field = int (input("Enter you selection Player 1:")); fields [field-1] = 'X'
     else : field = int (input("Enter you selection Player 2:")); fields [field-1] = 'O'
@@ -57,3 +59,5 @@ while (not winner):
 
     if (player1Plays) : player1Plays=False
     else : player1Plays=True
+    counterEOG+=1
+    if counterEOG > 8 : winner=True; print("No Winner encountered.")
